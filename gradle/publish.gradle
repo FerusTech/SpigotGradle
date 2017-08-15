@@ -1,13 +1,5 @@
 apply plugin: "com.gradle.plugin-publish"
 
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: uri(".repo"))
-        }
-    }
-}
-
 task setupPluginUpload << {
     final String key = System.getenv("publishKey")
     final String secret = System.getenv("publishSecret")
