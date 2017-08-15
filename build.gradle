@@ -15,7 +15,7 @@ buildscript {
 }
 
 group = "tech.ferus.gradle"
-version = "1.0.4"
+version = "1.0.5"
 description = "Gradle Plugin intended to provide resources for quicker Spigot plugin development."
 
 apply plugin: "java"
