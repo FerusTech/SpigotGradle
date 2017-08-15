@@ -1,5 +1,5 @@
 # SpigotGradle 
-[![Build Status](https://travis-ci.org/FerusGrim/spigotgradle.svg?branch=master)](https://travis-ci.org/FerusGrim/spigotgradle)
+[![Build Status](https://travis-ci.org/FerusTech/SpigotGradle.svg?branch=master)](https://travis-ci.org/FerusTech/SpigotGradle)
 
 SpigotGradle is a Gradle plugin meant to make certain tasks easier in terms of developing Spigot plugins.
 
