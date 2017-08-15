@@ -53,7 +53,7 @@ license {
     header rootProject.file('HEADER')
     include '**/*.java'
     ignoreFailures false
-    scrictCheck true
+    strictCheck true
     mapping {
         java = 'SLASHSTAR_STYLE'
     }
