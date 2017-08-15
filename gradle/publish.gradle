@@ -31,7 +31,7 @@ pluginBundle {
     tags = ["minecraft", "spigot", "plugin"]
 
     plugins {
-        spigotPlugin {
+        spigotgradle {
             id = "tech.ferus.gradle.spigotgradle"
             displayName = "SpigotGradle"
         }
