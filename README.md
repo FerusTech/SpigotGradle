@@ -15,7 +15,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.tech.ferus.gradle:spigotgradle:1.0.3"
+    classpath "gradle.plugin.tech.ferus.gradle:spigotgradle:1.0.4"
   }
 }
 
@@ -26,7 +26,7 @@ apply plugin: "tech.ferus.gradle.spigotgradle"
 
 ```groovy
 plugins {
-    id "tech.ferus.gradle.spigotgradle:1.0.3"
+    id "tech.ferus.gradle.spigotgradle:1.0.4"
 }
 ```
 
