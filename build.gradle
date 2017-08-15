@@ -22,7 +22,6 @@ apply plugin: "java"
 apply plugin: "idea"
 apply plugin: "eclipse"
 apply plugin: "com.github.hierynomus.license"
-apply plugin: "com.gradle.plugin-publish"
 apply plugin: "net.nemerosa.versioning"
 
 final Date buildDateTime = new Date()
@@ -38,6 +37,7 @@ ext {
 }
 
 apply from: file("gradle/artifacts.gradle")
+apply from: file("gradle/publish.gradle")
 
 repositories {
     mavenCentral()
