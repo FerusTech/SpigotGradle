@@ -1,0 +1,65 @@
+import java.text.SimpleDateFormat
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        jcenter()
+    }
+    dependencies {
+        classpath "com.gradle.publish:plugin-publish-plugin:0.9.7"
+        classpath "net.nemerosa:versioning:2.0.0"
+        classpath "gradle.plugin.nl.javadude.gradle.plugins:license-gradle-plugin:0.14.0"
+    }
+}
+
+group = "tech.ferus.gradle"
+version = "1.0.0-SNAPSHOT"
+description = "Gradle Plugin intended to provide resources for quicker Spigot plugin development."
+
+apply plugin: "java"
+apply plugin: "idea"
+apply plugin: "eclipse"
+apply plugin: "com.github.hierynomus.license"
+apply plugin: "com.gradle.plugin-publish"
+apply plugin: "net.nemerosa.versioning"
+
+final Date buildDateTime = new Date()
+ext {
+    buildBy = System.properties['user.name']
+    buildDate = new SimpleDateFormat('yyyy-MM-dd').format(buildDateTime)
+    buildTime = new SimpleDateFormat('HH:mm:ss.SSSZ').format(buildDateTime)
+    buildCreatedBy = "${System.properties["java.version"]} (${System.properties["java.vendor"]} ${System.properties["java.vm.version"]})".toString()
+
+    gitBranch = versioning.info.branch
+    gitHash = versioning.info.commit
+    gitHashShort = versioning.info.build
+}
+
+apply from: file("gradle/artifacts.gradle")
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile gradleApi()
+    compile "com.google.guava:guava:18.0"
+}
+
+license {
+    header rootProject.file('HEADER')
+    include '**/*.java'
+    ignoreFailures false
+    scrictCheck true
+    mapping {
+        java = 'SLASHSTAR_STYLE'
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "3.5"
+    distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+}

@@ -1,0 +1,39 @@
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri(".repo"))
+        }
+    }
+}
+
+task setupPluginUpload << {
+    final String key = System.getenv("publishKey")
+    final String secret = System.getenv("publishSecret")
+
+    if (!key) {
+        throw new RuntimeException("publishKey isn't a defined environmental variable.")
+    }
+
+    if (!secret) {
+        throw new RuntimeException("publishSecret isn't a defined environmental variable.")
+    }
+
+    System.properties.setProperty("gradle.publish.key", key)
+    System.properties.setProperty("gradle.publish.secret", secret)
+}
+
+tasks.publishPlugins.dependsOn tasks.setupPluginUpload
+
+pluginBundle {
+    website = "https://ferus.tech"
+    vcsUrl = "https://github.com/FerusTech/SpigotGradle"
+    description = project.description
+    tags = ["minecraft", "spigot", "plugin"]
+
+    plugins {
+        spigotPlugin {
+            id = "tech.ferus.gradle.spigotgradle"
+            displayName = "SpigotGradle"
+        }
+    }
+}
