@@ -1,3 +1,5 @@
+apply plugin: "com.gradle.plugin-publish"
+
 uploadArchives {
     repositories {
         mavenDeployer {
