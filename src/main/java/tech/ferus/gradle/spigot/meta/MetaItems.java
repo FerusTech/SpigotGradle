@@ -28,7 +28,8 @@ public enum MetaItems {
     VERSION("version", true),
     WEBSITE("website", false),
     AUTHOR("author", false),
-    AUTHORS("authors", false)
+    AUTHORS("authors", false),
+    DEPEND("depend", false),
     ;
 
     private final String id;

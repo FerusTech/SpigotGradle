@@ -44,6 +44,7 @@ spigot {
         website = "https://domain.tld"
         author = "FerusGrim"
         authors = ["FerusGrim"]
+        depend = ["SomePlugin", "AnotherPlugin"]
     }
 }
 ```
