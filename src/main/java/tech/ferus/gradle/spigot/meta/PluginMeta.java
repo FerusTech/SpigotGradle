@@ -78,6 +78,10 @@ public class PluginMeta {
         this.set(MetaItems.AUTHORS, authors);
     }
 
+    public void setDepend(final List<String> depend) {
+        this.set(MetaItems.DEPEND, depend);
+    }
+
     private void set(final MetaItems key, final Object value) {
         this.items.add(new MetaItem(key, value));
     }
