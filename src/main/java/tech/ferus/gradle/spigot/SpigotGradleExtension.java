@@ -36,6 +36,6 @@ public class SpigotGradleExtension {
     }
 
     void meta(@DelegatesTo(PluginMeta.class) Closure<?> closure) {
-        plugin.getProject().configure(this.plugin.getPluginMeta(), closure);
+        this.plugin.getProject().configure(this.plugin.getPluginMeta(), closure);
     }
 }

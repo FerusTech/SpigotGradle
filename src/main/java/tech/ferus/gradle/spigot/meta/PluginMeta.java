@@ -82,6 +82,10 @@ public class PluginMeta {
         this.set(MetaItems.DEPEND, depend);
     }
 
+    public void setSoftDepend(final List<String> softDepend) {
+        this.set(MetaItems.SOFTDEPEND, softDepend);
+    }
+
     private void set(final MetaItems key, final Object value) {
         this.items.add(new MetaItem(key, value));
     }

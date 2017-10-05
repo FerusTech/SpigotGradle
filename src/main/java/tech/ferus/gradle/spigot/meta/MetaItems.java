@@ -30,6 +30,7 @@ public enum MetaItems {
     AUTHOR("author", false),
     AUTHORS("authors", false),
     DEPEND("depend", false),
+    SOFTDEPEND("softdepend", false)
     ;
 
     private final String id;
